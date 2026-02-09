@@ -1,0 +1,134 @@
+.glow-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: all 0.3s ease;
+}
+
+/* Primary Button */
+.glow-btn.primary {
+    background-color: transparent;
+    border: 1.5px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.glow-btn.primary:hover {
+    background-color: var(--primary-color);
+    color: var(--accent-dark);
+    box-shadow:
+        0 0 20px var(--primary-glow),
+        0 0 40px rgba(212, 175, 55, 0.2),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Animated glow border effect */
+.glow-btn.primary::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: conic-gradient(from 0deg,
+            transparent,
+            var(--primary-color),
+            transparent 30%);
+    border-radius: 50px;
+    z-index: -2;
+    opacity: 0;
+    animation: glowRotate 3s linear infinite;
+    transition: opacity 0.3s ease;
+}
+
+.glow-btn.primary:hover::before {
+    opacity: 1;
+}
+
+.glow-btn.primary::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-color);
+    border-radius: 50px;
+    z-index: -1;
+    transition: background 0.3s ease;
+}
+
+.glow-btn.primary:hover::after {
+    background: var(--primary-color);
+}
+
+/* Secondary Button */
+.glow-btn.secondary {
+    background-color: transparent;
+    border: 1.5px solid var(--text-muted);
+    color: var(--text-color);
+}
+
+.glow-btn.secondary:hover {
+    border-color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Button Content */
+.glow-btn-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Background for shimmer effect */
+.glow-btn-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent);
+    background-size: 200% 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.glow-btn:hover .glow-btn-bg {
+    opacity: 1;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Icon styling */
+.glow-btn svg {
+    font-size: 1rem;
+}
+
+@keyframes glowRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}

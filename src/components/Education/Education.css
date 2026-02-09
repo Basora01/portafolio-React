@@ -1,0 +1,85 @@
+.edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.edu-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.edu-column h3 svg {
+    font-size: 1.3rem;
+}
+
+.edu-card {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.edu-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: var(--primary-color);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.edu-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.institution {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.cert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cert-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.cert-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.cert-icon {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.cert-item h4 {
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.cert-item span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 992px) {
+    .edu-grid {
+        grid-template-columns: 1fr;
+    }
+}

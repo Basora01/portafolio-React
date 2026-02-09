@@ -1,0 +1,113 @@
+/* 
+   Portfolio Theme: Black & Neon Gold
+   Author: Carlos Basora Ramos
+*/
+
+:root {
+    --bg-color: #050505;
+    --bg-alt: #0f0f0f;
+    --text-color: #f0f0f0;
+    --text-muted: #a0a0a0;
+    --primary-color: #D4AF37;
+    --primary-glow: rgba(212, 175, 55, 0.4);
+    --primary-glow-intense: rgba(212, 175, 55, 0.6);
+    --secondary-color: #1a1a1a;
+    --accent-dark: #000000;
+    
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+    --font-accent: 'Playfair Display', serif;
+    
+    --transition: all 0.3s ease;
+    --transition-slow: all 0.6s ease;
+    --border-radius: 8px;
+    --section-spacing: 100px;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    cursor: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section */
+.section {
+    padding: var(--section-spacing) 0;
+    position: relative;
+}
+
+/* Gold Text */
+.gold-text {
+    color: var(--primary-color);
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+/* Dark Background Section */
+.dark-bg {
+    background-color: var(--bg-alt);
+}
+
+/* Gold Dot */
+.gold-dot {
+    color: var(--primary-color);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* Selection */
+::selection {
+    background: var(--primary-color);
+    color: var(--bg-color);
+}

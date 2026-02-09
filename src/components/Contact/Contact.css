@@ -1,0 +1,110 @@
+.contact-subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-top: -40px;
+    margin-bottom: 50px;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+}
+
+.contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: var(--bg-alt);
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-card:hover {
+    border-color: var(--primary-color);
+    transform: translateX(10px);
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.1);
+}
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .icon-box {
+    background: var(--primary-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.contact-card h4 {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 2px;
+    font-weight: 400;
+}
+
+.contact-card p {
+    font-weight: 500;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 20px;
+    background: var(--bg-alt);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+@media (max-width: 992px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
