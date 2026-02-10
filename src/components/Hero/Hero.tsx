@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 import { FaDownload, FaChevronDown } from 'react-icons/fa';
 import ParticlesBackground from './ParticlesBackground';
 import GlowButton from '../common/GlowButton';
@@ -6,7 +7,7 @@ import { personalInfo } from '../../data/portfolioData';
 import './Hero.css';
 
 const Hero = () => {
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -17,12 +18,12 @@ const Hero = () => {
         }
     };
 
-    const itemVariants = {
+    const itemVariants: Variants = {
         hidden: { opacity: 0, y: 30 },
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.6, ease: 'easeOut' }
+            transition: { duration: 0.6, ease: 'easeOut' as const }
         }
     };
 
@@ -77,7 +78,7 @@ const Hero = () => {
                     transition={{
                         duration: 6,
                         repeat: Infinity,
-                        ease: 'easeInOut'
+                        ease: 'easeInOut' as const
                     }}
                 >
                     <div className="shape shape-1" />

@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
 import SectionTitle from '../common/SectionTitle';
 import { projects } from '../../data/portfolioData';
 import './Projects.css';
 
 const Projects = () => {
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -15,12 +16,12 @@ const Projects = () => {
         }
     };
 
-    const cardVariants = {
+    const cardVariants: Variants = {
         hidden: { opacity: 0, y: 50 },
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.5, ease: 'easeOut' }
+            transition: { duration: 0.5, ease: 'easeOut' as const }
         }
     };
 

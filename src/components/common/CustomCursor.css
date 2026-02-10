@@ -7,7 +7,7 @@
     border-radius: 50%;
     z-index: 9999;
     pointer-events: none;
-    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+    will-change: left, top;
 }
 
 .cursor-dot {
@@ -15,6 +15,8 @@
     height: 6px;
     background-color: var(--primary-color);
     box-shadow: 0 0 10px var(--primary-glow);
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 .cursor-outline {
@@ -22,7 +24,8 @@
     height: 35px;
     border: 1.5px solid var(--primary-color);
     background-color: transparent;
-    transition: all 0.15s ease-out;
+    opacity: 1;
+    transition: width 0.15s ease, height 0.15s ease, background-color 0.15s ease, opacity 0.3s ease;
 }
 
 .cursor-outline.hovering {
@@ -51,7 +54,7 @@
 
     .cursor-dot,
     .cursor-outline {
-        display: none;
+        display: none !important;
     }
 
     body {
