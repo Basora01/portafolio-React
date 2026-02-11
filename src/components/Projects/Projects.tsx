@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
-import { FaArrowRight, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 import SectionTitle from '../common/SectionTitle';
 import { projects } from '../../data/portfolioData';
 import './Projects.css';
