@@ -4,10 +4,10 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import './Header.css';
 
 const navLinks = [
-    { href: '#about', label: 'About' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#experience', label: 'Experience' },
+    { href: '#about', label: 'Sobre Mí' },
+    { href: '#projects', label: 'Proyectos' },
+    { href: '#skills', label: 'Habilidades' },
+    { href: '#experience', label: 'Experiencia' },
 ];
 
 const Header = () => {
@@ -62,7 +62,7 @@ const Header = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5, duration: 0.3 }}
                     >
-                        Contact Me
+                        Contáctame
                     </motion.a>
                 </nav>
 
@@ -106,7 +106,7 @@ const Header = () => {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.4 }}
                         >
-                            Contact
+                            Contacto
                         </motion.a>
                     </motion.div>
                 )}

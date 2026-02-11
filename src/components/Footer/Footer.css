@@ -10,6 +10,7 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    position: relative;
 }
 
 .footer-logo {
@@ -45,5 +46,28 @@
     background: var(--primary-color);
     color: var(--bg-color);
     border-color: var(--primary-color);
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.back-to-top:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
     box-shadow: 0 0 20px var(--primary-glow);
 }

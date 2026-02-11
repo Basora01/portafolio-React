@@ -7,7 +7,7 @@ const Skills = () => {
     return (
         <section id="skills" className="section skills dark-bg">
             <div className="container">
-                <SectionTitle title="My" highlight="Skills" />
+                <SectionTitle title="Mis" highlight="Habilidades" />
 
                 <div className="skills-wrapper">
                     <motion.div
@@ -17,7 +17,7 @@ const Skills = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h3>Technical Skills</h3>
+                        <h3>Habilidades Técnicas</h3>
 
                         {technicalSkills.map((skill, index) => (
                             <div className="skill-item" key={skill.name}>
@@ -49,7 +49,7 @@ const Skills = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <h3>Professional Skills</h3>
+                        <h3>Habilidades Profesionales</h3>
 
                         <div className="skill-tags">
                             {professionalSkills.map((skill, index) => (

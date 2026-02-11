@@ -8,7 +8,7 @@ const Education = () => {
     return (
         <section id="education" className="section education dark-bg">
             <div className="container">
-                <SectionTitle title="Education &" highlight="Certifications" centered />
+                <SectionTitle title="Educación y" highlight="Certificaciones" centered />
 
                 <div className="edu-grid">
                     <motion.div
@@ -20,7 +20,7 @@ const Education = () => {
                     >
                         <h3>
                             <FaGraduationCap className="gold-text" />
-                            Education
+                            Educación
                         </h3>
 
                         {education.map((edu, index) => (
@@ -51,7 +51,7 @@ const Education = () => {
                     >
                         <h3>
                             <FaCertificate className="gold-text" />
-                            Certifications
+                            Certificaciones
                         </h3>
 
                         <div className="cert-list">

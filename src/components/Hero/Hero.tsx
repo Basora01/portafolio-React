@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { FaDownload, FaChevronDown } from 'react-icons/fa';
@@ -7,6 +8,32 @@ import { personalInfo } from '../../data/portfolioData';
 import './Hero.css';
 
 const Hero = () => {
+    const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+    const [displayText, setDisplayText] = useState('');
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+        const currentRole = personalInfo.typingRoles[currentRoleIndex];
+        let timeout: ReturnType<typeof setTimeout>;
+
+        if (!isDeleting && displayText === currentRole) {
+            timeout = setTimeout(() => setIsDeleting(true), 2000);
+        } else if (isDeleting && displayText === '') {
+            setIsDeleting(false);
+            setCurrentRoleIndex((prev) => (prev + 1) % personalInfo.typingRoles.length);
+        } else if (isDeleting) {
+            timeout = setTimeout(() => {
+                setDisplayText(currentRole.substring(0, displayText.length - 1));
+            }, 40);
+        } else {
+            timeout = setTimeout(() => {
+                setDisplayText(currentRole.substring(0, displayText.length + 1));
+            }, 80);
+        }
+
+        return () => clearTimeout(timeout);
+    }, [displayText, isDeleting, currentRoleIndex]);
+
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
@@ -40,7 +67,7 @@ const Hero = () => {
                 animate="visible"
             >
                 <motion.span className="hero-subtitle" variants={itemVariants}>
-                    Hello, I'm
+                    Hola, soy
                 </motion.span>
 
                 <motion.h1 className="hero-title" variants={itemVariants}>
@@ -48,20 +75,21 @@ const Hero = () => {
                 </motion.h1>
 
                 <motion.h2 className="hero-role" variants={itemVariants}>
-                    Software Engineer <span className="gold-text">&</span> Developer
+                    <span className="typing-text">{displayText}</span>
+                    <span className="typing-cursor">|</span>
                 </motion.h2>
 
                 <motion.p className="hero-description" variants={itemVariants}>
-                    Specializing in building exceptional digital experiences.
-                    Focused on .NET, Python, and creating intuitive, dynamic interfaces.
+                    Especializado en crear experiencias digitales excepcionales.
+                    Enfocado en .NET, Python y el desarrollo de interfaces intuitivas y dinámicas.
                 </motion.p>
 
                 <motion.div className="hero-buttons" variants={itemVariants}>
                     <GlowButton href="#projects" variant="primary">
-                        View My Work
+                        Ver Mis Proyectos
                     </GlowButton>
                     <GlowButton href="/CV_Carlos_Basora.pdf" variant="secondary" download>
-                        <FaDownload /> Download CV
+                        <FaDownload /> Descargar CV
                     </GlowButton>
                 </motion.div>
             </motion.div>
@@ -95,7 +123,7 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5 }}
             >
-                <span>Scroll</span>
+                <span>Explorar</span>
                 <motion.div
                     animate={{ y: [0, 8, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}

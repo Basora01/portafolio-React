@@ -7,7 +7,7 @@ const Experience = () => {
     return (
         <section id="experience" className="section experience">
             <div className="container">
-                <SectionTitle title="Work" highlight="Experience" />
+                <SectionTitle title="Experiencia" highlight="Laboral" />
 
                 <div className="timeline">
                     <motion.div

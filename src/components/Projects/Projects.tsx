@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaExternalLinkAlt } from 'react-icons/fa';
 import SectionTitle from '../common/SectionTitle';
 import { projects } from '../../data/portfolioData';
 import './Projects.css';
@@ -28,7 +28,7 @@ const Projects = () => {
     return (
         <section id="projects" className="section projects">
             <div className="container">
-                <SectionTitle title="Featured" highlight="Projects" />
+                <SectionTitle title="Mis" highlight="Proyectos" />
 
                 <motion.div
                     className="projects-grid"
@@ -47,9 +47,30 @@ const Projects = () => {
                                 transition: { duration: 0.3 }
                             }}
                         >
-                            <div className="project-image">
-                                <div className="project-overlay" />
+                            <div
+                                className="project-image"
+                                style={{
+                                    backgroundImage: project.image ? `url(${project.image})` : project.gradient,
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center',
+                                    border: project.image ? '1px solid rgba(255,255,255,0.1)' : 'none'
+                                }}
+                            >
+                                {/* Only show icon/overlay if no image, or as an overlay on hover? 
+                                    Let's keep the icon if it's a gradient background, otherwise just the image. 
+                                */}
+                                {!project.image && (
+                                    <>
+                                        <span className="project-icon">{project.icon}</span>
+                                        <div className="project-overlay" />
+                                    </>
+                                )}
+
+                                {project.image && (
+                                    <div className="project-overlay image-overlay" />
+                                )}
                             </div>
+
                             <div className="project-content">
                                 <h3>{project.title}</h3>
                                 <p className="project-desc">{project.description}</p>
@@ -58,8 +79,13 @@ const Projects = () => {
                                         <span key={index}>{tech}</span>
                                     ))}
                                 </div>
-                                <a href={project.link} className="btn-link">
-                                    View Details <FaArrowRight />
+                                <a
+                                    href={project.link}
+                                    className="btn-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Ver Web <FaExternalLinkAlt style={{ fontSize: '0.8em', marginLeft: '5px' }} />
                                 </a>
                             </div>
                         </motion.article>

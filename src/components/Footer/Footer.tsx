@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub, FaInstagram, FaChevronUp } from 'react-icons/fa';
 import { personalInfo } from '../../data/portfolioData';
 import './Footer.css';
 
@@ -11,6 +11,10 @@ const Footer = () => {
         { icon: <FaGithub />, href: personalInfo.social.github },
         { icon: <FaInstagram />, href: personalInfo.social.instagram }
     ];
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
     return (
         <footer className="footer">
@@ -24,8 +28,6 @@ const Footer = () => {
                     <div className="footer-logo">
                         CBR<span className="gold-dot">.</span>
                     </div>
-
-                    <p>&copy; {currentYear} {personalInfo.fullName}. All Rights Reserved.</p>
 
                     <div className="social-links">
                         {socialLinks.map((social, index) => (
@@ -45,6 +47,18 @@ const Footer = () => {
                             </motion.a>
                         ))}
                     </div>
+
+                    <p>&copy; {currentYear} {personalInfo.fullName}. Todos los derechos reservados.</p>
+
+                    <motion.button
+                        className="back-to-top"
+                        onClick={scrollToTop}
+                        whileHover={{ scale: 1.1, backgroundColor: 'var(--primary-color)', color: '#000' }}
+                        whileTap={{ scale: 0.95 }}
+                        aria-label="Volver arriba"
+                    >
+                        <FaChevronUp />
+                    </motion.button>
                 </motion.div>
             </div>
         </footer>

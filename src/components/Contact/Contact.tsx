@@ -30,19 +30,19 @@ const Contact = () => {
     const contactCards = [
         {
             icon: <FaEnvelope />,
-            title: 'Email Me',
+            title: 'Email',
             value: personalInfo.email,
             href: `mailto:${personalInfo.email}`
         },
         {
             icon: <FaWhatsapp />,
             title: 'WhatsApp',
-            value: `+1 (${personalInfo.phone.replace('-', ') ').replace('-', '-')}`,
+            value: personalInfo.phone,
             href: `https://wa.me/1${personalInfo.phone.replace(/-/g, '')}`
         },
         {
             icon: <FaMapMarkerAlt />,
-            title: 'Location',
+            title: 'Ubicación',
             value: personalInfo.location,
             href: null
         }
@@ -51,14 +51,14 @@ const Contact = () => {
     return (
         <section id="contact" className="section contact">
             <div className="container">
-                <SectionTitle title="Get In" highlight="Touch" />
+                <SectionTitle title="Ponte en" highlight="Contacto" />
                 <motion.p
                     className="contact-subtitle"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    Let's discuss your next project.
+                    Hablemos sobre tu próximo proyecto.
                 </motion.p>
 
                 <div className="contact-wrapper">
@@ -109,7 +109,7 @@ const Contact = () => {
                             <input
                                 type="text"
                                 name="name"
-                                placeholder="Your Name"
+                                placeholder="Tu Nombre"
                                 value={formData.name}
                                 onChange={handleChange}
                                 required
@@ -119,7 +119,7 @@ const Contact = () => {
                             <input
                                 type="email"
                                 name="email"
-                                placeholder="Your Email"
+                                placeholder="Tu Email"
                                 value={formData.email}
                                 onChange={handleChange}
                                 required
@@ -128,7 +128,7 @@ const Contact = () => {
                         <div className="form-group">
                             <textarea
                                 name="message"
-                                placeholder="Your Message"
+                                placeholder="Tu Mensaje"
                                 rows={5}
                                 value={formData.message}
                                 onChange={handleChange}
@@ -136,7 +136,7 @@ const Contact = () => {
                             />
                         </div>
                         <GlowButton type="submit" variant="primary">
-                            Send Message
+                            Enviar Mensaje
                         </GlowButton>
                     </motion.form>
                 </div>

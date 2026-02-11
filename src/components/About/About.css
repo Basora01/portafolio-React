@@ -2,12 +2,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    align-items: center;
+    align-items: start;
 }
 
 .about-image .image-wrapper {
     width: 100%;
-    height: 400px;
+    height: 350px;
     position: relative;
     overflow: hidden;
     border-radius: var(--border-radius);
@@ -48,10 +48,52 @@
     justify-content: center;
     font-size: 5rem;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.05);
+    color: rgba(212, 175, 55, 0.08);
     background: linear-gradient(135deg, #111, #1a1a1a);
+    letter-spacing: 0.1em;
 }
 
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+    background: var(--secondary-color);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.stat-item:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 8px;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* About Text */
 .about-text h3 {
     font-size: 2.5rem;
     margin-bottom: 30px;
@@ -66,6 +108,7 @@
     line-height: 1.8;
 }
 
+/* Info List */
 .info-list {
     margin-top: 40px;
     display: grid;
@@ -75,19 +118,33 @@
 
 .info-item {
     display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.info-icon {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.info-item div {
+    display: flex;
     flex-direction: column;
 }
 
 .info-item .label {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     color: var(--primary-color);
     letter-spacing: 1px;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 .info-item .value {
     font-weight: 500;
+    font-size: 0.95rem;
 }
 
 @keyframes borderGlow {
@@ -108,6 +165,11 @@
         gap: 40px;
     }
 
+    .about-image {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
     .about-image .image-wrapper {
         max-width: 400px;
         margin: 0 auto;
@@ -121,5 +183,9 @@
 @media (max-width: 576px) {
     .info-list {
         grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
