@@ -75,7 +75,7 @@ export const projects: Project[] = [
         title: "Baramos Ingeniería SRL",
         description: "Sitio web corporativo para empresa de soluciones eléctricas e industriales. Diseño moderno con catálogo de servicios, cotizaciones y atención 24/7.",
         technologies: ["HTML5", "CSS3", "JavaScript", "Responsive"],
-        link: "https://baramosingenieria.com",
+        link: "https://baramosingenieria.net",
         image: "/projects/baramos.png",
         gradient: "linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%)",
         icon: "⚡"
@@ -85,7 +85,7 @@ export const projects: Project[] = [
         title: "Zyntex AI Solutions",
         description: "Plataforma de automatizaciones con n8n, webs funcionales y bots. Páginas que venden, bots que responden y negocios que escalan.",
         technologies: ["React", "n8n", "AI/Bots", "CRM"],
-        link: "https://zyntex.com",
+        link: "https://zyntexaisolutions.vercel.app",
         image: "/projects/zyntex.png",
         gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
         icon: "🤖"
