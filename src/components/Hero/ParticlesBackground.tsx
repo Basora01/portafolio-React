@@ -60,7 +60,7 @@ const ParticlesBackground = () => {
                     default: 'bounce',
                 },
                 random: true,
-                speed: 0.8,
+                speed: 0.4,
                 straight: false,
             },
             number: {
