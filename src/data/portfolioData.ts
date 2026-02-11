@@ -96,6 +96,7 @@ export const projects: Project[] = [
         description: "Sitio web moderno y responsivo con animaciones fluidas, partículas interactivas y diseño premium negro y dorado.",
         technologies: ["React", "TypeScript", "Framer Motion", "Vite"],
         link: "#",
+        image: "/projects/portfolio.png",
         gradient: "linear-gradient(135deg, #D4AF37 0%, #8B7355 100%)",
         icon: "🌐"
     },
@@ -105,6 +106,7 @@ export const projects: Project[] = [
         description: "Aplicación web para control de ingresos, gastos, presupuestos y deudas con gráficos dinámicos y autenticación.",
         technologies: ["React", "Supabase", "TypeScript", "Chart.js"],
         link: "#",
+        image: "/projects/gestion-financiera.png",
         gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
         icon: "💰"
     }
